@@ -2,6 +2,20 @@
 
 自动创建问知学苑周报文档并设置日程提醒（支持交互式选择）。
 
+## 安装
+
+使用 npx skills 安装：
+
+```bash
+npx skills add git@github.com:yimingy72/dingtalk-weekly-report-skill.git
+```
+
+或使用 HTTPS：
+
+```bash
+npx skills add https://github.com/yimingy72/dingtalk-weekly-report-skill.git
+```
+
 ## 功能特性
 
 1. ✅ 自动搜索上一周的周报并复制内容
