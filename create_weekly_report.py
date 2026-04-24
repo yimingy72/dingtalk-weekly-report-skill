@@ -262,6 +262,7 @@ def main():
     parser.add_argument('--folder', help='文档所在文件夹 ID')
     parser.add_argument('--participants', help='参与者：输入"all"选择全部成员，或输入姓名（逗号分隔，如：徐赫,吴振通）')
     parser.add_argument('--room', help='会议室名称（用于自动匹配），输入"skip"跳过会议室预定')
+    parser.add_argument('--skip-participants', action='store_true', help='跳过添加参与者步骤（用于分步执行）')
     parser.add_argument('--non-interactive', action='store_true', help='非交互模式（用于测试）')
     parser.add_argument('--test-user', help='测试用户（仅在非交互模式下使用）')
     
@@ -354,8 +355,13 @@ def main():
     print("\n步骤 5/6: 选择参与者...")
 
     team_members = config['team_members']
+    selected_names = []
+    user_ids = []
 
-    if args.non_interactive and args.test_user:
+    if args.skip_participants:
+        print("⏭️  已跳过参与者步骤（--skip-participants）")
+        print(f"📋 日程 ID: {event_id}（可稍后通过 --event-id 添加参与者）")
+    elif args.non_interactive and args.test_user:
         # 测试模式
         if args.test_user in team_members:
             user_ids = [team_members[args.test_user]]
