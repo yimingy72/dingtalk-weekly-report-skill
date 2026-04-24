@@ -13,14 +13,6 @@
 
 ## 安装
 
-使用 npx skills 安装：
-
-```bash
-npx skills add git@github.com:yimingy72/dingtalk-weekly-report-skill.git
-```
-
-或使用 HTTPS：
-
 ```bash
 npx skills add https://github.com/yimingy72/dingtalk-weekly-report-skill.git
 ```
